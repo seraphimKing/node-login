@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  Hi #{name} Welcome to home
+  a(href='/logout')注销
+  table.mt30(border='1')
+    thead
+        tr
+            th id
+            th name
+            th old
+            th phone
+            th delete
+            th editor
+            
+    tbody
+        each item in items
+            tr
+                td= item.id
+                td= item.name
+                td= item.old
+                td= item.phone
+                td <a href='/deleteline?id=#{item.id}'>删除</a>
+                td <a href='/editorline?id=#{item.id}'>编辑</a>
+                

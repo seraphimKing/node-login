@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  修改信息
+  each item in items
+      form.loginForm(action="/clerkeditor?id=#{item.id}" method="post" )
+          p 
+            span id：
+            span= item.id
+          p 
+            span姓名：
+            input(type="text" name="name" value='#{item.name}')
+          p 
+            span年龄：
+            input(type="text" name="old" value='#{item.old}')
+          p 
+            span手机：
+            input(type="text" name="phone" value='#{item.phone}') 
+
+          p 
+            input.ml50(type="submit",value="确定")
+            a.ml30(href="javascript:history.go(-1)")返回
